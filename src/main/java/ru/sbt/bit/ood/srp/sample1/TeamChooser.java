@@ -19,9 +19,8 @@ public class TeamChooser {
     }
 
     public void formTeam(String filename, int teamSize) {
-        Reader in = null;
         try {
-            in = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(filename));
+            Reader in = new InputStreamReader(getClass().getClassLoader().getResourceAsStream(filename));
             ArrayList<CSVRecord> players = new ArrayList<>();
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(in);
             for (CSVRecord record : records) {
